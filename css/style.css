@@ -40,7 +40,8 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
-.a-rounded {
+.a-rounded,
+.button-rounded {
   border-radius: 50px;
 }
 
@@ -62,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent;
   width: 100%;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  z-index: 999;
 }
 .header .container .header__main .header__logo img {
   width: 80px;
@@ -209,17 +211,80 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
 }
 
-.request .container .request__left .request__img {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 8px;
-  padding-right: 50px;
-  padding-left: 113px;
+.request .port .cell {
+  width: 1000px;
+  max-width: calc(100% - 60px);
 }
-.request .container .request__left .request__img img {
+.request .port .cell .request__left {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.request .port .cell .request__left .request__img {
+  padding-top: 8px;
+}
+.request .port .cell .request__left .request__img img {
   width: 100%;
 }
-.request .container .request__right form {
+.request .port .cell .request__right .request__form {
   box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  padding: 25px;
+}
+.request .port .cell .request__right .request__form .headline .content {
+  font-size: 38px;
+  margin-bottom: 50px;
+}
+.request .port .cell .request__right .request__form form i {
+  color: #b61984;
+  font-size: 13px;
+  position: absolute;
+  padding: 13px;
+}
+.request .port .cell .request__right .request__form form input {
+  padding: 10px 5px 10px 35px;
+  border-radius: 50px;
+  font-size: 11px;
+}
+.request .port .cell .request__right .request__form form input:focus {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.request .port .cell .request__right .request__form form select {
+  padding: 10px 5px 10px 35px;
+  border-radius: 50px;
+  font-size: 11px;
+}
+.request .port .cell .request__right .request__form form select:focus {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.request .port .cell .request__right .request__form form textarea {
+  padding: 10px 5px 10px 35px;
+  border-radius: 50px;
+  font-size: 11px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.request .port .cell .request__right .request__form form textarea:focus {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.request .port .cell .request__right .request__form form a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 3rem #b61984 inset;
+  display: inline-block;
+  padding: 0.9rem 3.5rem;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+.request .port .cell .request__right .request__form form a:hover {
+  color: #b61984;
+}
+.request .port .cell .request__right .request__form form a:hover {
+  box-shadow: 0 0 0 1px #b61984 inset;
 }

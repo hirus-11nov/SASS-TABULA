@@ -1,4 +1,4 @@
-@mixin aTag ($fs: $text-fz-1, $fw: $text-fw-3, $c: $text-color-primary, $text-trans: capitalize, $c-hover: $text-color-secondary, $transition: $transition-primary) {
+@mixin aTag ($fs: $text-fs-1, $fw: $text-fw-3, $c: $text-color-primary, $text-trans: capitalize, $c-hover: $text-color-secondary, $transition: $transition-primary) {
     font-size: $fs;
     font-weight: $fw;
     color: $c;
@@ -42,4 +42,21 @@
     width: $w;
     height: $h;
     z-index: -1;
+}
+
+@mixin icon {
+    color: $color-primary;
+    font-size: $text-fs-1;
+    position: absolute;
+    padding: 13px;
+}
+
+@mixin input {
+    padding: 10px 5px 10px 35px;
+    border-radius: 50px;
+    font-size: $text-fs-0;
+    &:focus {
+        box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+        border: 1px solid rgba(0,0,0,.3);
+    }
 }

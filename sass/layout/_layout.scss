@@ -4,6 +4,7 @@
     background: transparent;
     width: 100%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    z-index: 999;
 
     .container {
         .header__main {
@@ -150,29 +151,67 @@
 
 //START REQUEST
 .request {
-    .container {
-        .request__left {
-            .request__img {
-                display: flex;
-                justify-content: flex-end;
-                padding-top: 8px;
-                padding-right: 50px;
-                padding-left: 113px;
+    .port {
+        .cell {
+            width: 1000px;
+            max-width: calc(100% - 60px);
 
-                img {
-                    width: 100%;
+            .request__left {
+                padding-left: 35px;
+                padding-right: 35px;
+
+                .request__img {
+                    padding-top: 8px;
+
+                    img {
+                        width: 100%;
+                    }
                 }
             }
-        }
 
-        .request__right {
-            form {
-                box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
-                border-radius: 10px;
+            .request__right {
+                .request__form {
+                    box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                    border-radius: 10px;
+                    padding: 25px;
 
-                .request__name {}
+                    .headline {
+                        .content {
+                            font-size: 38px;
+                            margin-bottom: 50px;
+                        }
+                    }
 
-                .request__email {}
+                    form {
+                        i {
+                            @include icon();
+                        }
+
+                        input {
+                            @include input();
+                        }
+
+                        select {
+                            @include input();
+                        }
+
+                        textarea {
+                            @include input();
+                            border-radius: 20px;
+                            transition: $transition-primary;
+                        }
+
+                        a {
+                            @include aTag($text-fs-2, $text-fw-6, $color-white, uppercase, $text-color-secondary, $transition-primary);
+                            @include aButton();
+                            display: inline-block;
+                            padding: 0.9rem 3.5rem;
+                            font-family: "Montserrat",Arial,Helvetica,sans-serif;
+                            margin-top: 30px;
+                            margin-bottom: 45px;
+                        }
+                    }
+                }
             }
         }
     }
