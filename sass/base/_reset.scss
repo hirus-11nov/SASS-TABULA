@@ -1,0 +1,42 @@
+@import '../utilities/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color-primary;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat",Arial,Helvetica,sans-serif;
+}
+
+.container {
+    max-width: 1260px;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.card {
+    border: none;
+}

@@ -1,0 +1,45 @@
+@mixin aTag ($fs: $text-fz-1, $fw: $text-fw-3, $c: $text-color-primary, $text-trans: capitalize, $c-hover: $text-color-secondary, $transition: $transition-primary) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+    text-transform: $text-trans;
+    transition: $transition;
+    &:hover {
+        color: $c-hover;
+    }
+}
+
+@mixin aButton ($boxShadow: 0 0 0 3rem #b61984 inset, $boxShadowHover: 0 0 0 1px #b61984 inset) {
+    box-shadow: $boxShadow;
+    &:hover {
+        box-shadow: $boxShadowHover;
+    }
+}
+
+@mixin beforeAndAfter {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin titleAndContent ($titleFs: $text-fs-3, $contentFs: $text-fs-6xl) {
+    .title {
+        font-size: $titleFs;
+    }
+    .content {
+        font-size: $contentFs;
+    }
+}
+
+@mixin backgroundStyle ($bg-image, $bg-pos, $bg-repeat, $bg-size, $w, $h) {
+    background-image: $bg-image;
+    background-position: $bg-pos;
+    background-repeat: $bg-repeat;
+    background-size: $bg-size;
+    width: $w;
+    height: $h;
+    z-index: -1;
+}

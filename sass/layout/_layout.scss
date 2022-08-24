@@ -1,0 +1,181 @@
+// START HEADER
+.header {
+    position: fixed;
+    background: transparent;
+    width: 100%;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+
+    .container {
+        .header__main {
+            .header__logo {
+                img {
+                    width: 80px;
+                }
+            }
+
+            .header__navbar {
+                li {
+                    padding-right: 50px;
+
+                    .nav-link {
+                        line-height: 80px;
+                        @include aTag($text-fs-1, $text-fw-6, $text-color-primary, capitalize, $text-color-secondary);
+                    }
+                }
+
+                li:last-child {
+                    padding: 0;
+                }
+            }
+
+            .header__contact {
+                margin-left: 50px;
+
+                .phone-number {
+                    padding: .7rem 1.5rem;
+                    margin: 8px;
+                    position: relative;
+                    overflow: hidden;
+                    @include aTag ($text-fs-1, $text-fw-5, $text-color-white, capitalize, $text-color-secondary);
+                    @include aButton ();
+                }
+
+                .social-media {
+                    a {
+                        margin-left: 9px;
+                        @include aTag ($text-fs-1, $text-fw-5, $text-color-primary, capitalize, $text-color-secondary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//END HEADER
+
+//START ABOUT-US
+.about-us {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        @include backgroundStyle(url(/img/yellow_top_wave_01.png), top left, no-repeat, contain, 100%, 100%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        @include backgroundStyle(url(/img/Violet_top_left_wave.png), bottom left, no-repeat, contain, 100%, 100%);
+        bottom: 0;
+    }
+
+    .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .about-us__left {
+            .headline {
+                @include titleAndContent();
+            }
+        }
+
+        .about-us__right {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+//END ABOUT-US
+
+// START TEAM
+.team {
+    background: #DCD1F0;
+    position: relative;
+
+    &::after {
+        content: '';
+        @include backgroundStyle(url(/img/Wave_White_bottom_right_shape_01.png), bottom left, no-repeat, contain, 100%, 100%);
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+    }
+
+    .container {
+        .card {
+            z-index: 2;
+            transition: $transition-primary;
+            border-radius: 10px;
+
+            .team__thumb {
+                overflow: hidden;
+
+                &:hover img {
+                    transform: scale3d(1.05, 1.05, 1.05);
+                }
+
+                img {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    width: 100%;
+                    transition: $transition-secondary;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+            }
+
+            .card-body {
+                margin-top: 10px;
+
+                .headline {
+                    @include titleAndContent($text-fs-0, $text-fs-3xl)
+                }
+
+                .card-text {
+                    font-size: $text-fs-2;
+                    font-weight: $text-fw-4;
+                    line-height: 1.8rem;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+// END TEAM
+
+//START REQUEST
+.request {
+    .container {
+        .request__left {
+            .request__img {
+                display: flex;
+                justify-content: flex-end;
+                padding-top: 8px;
+                padding-right: 50px;
+                padding-left: 113px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .request__right {
+            form {
+                box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                border-radius: 10px;
+
+                .request__name {}
+
+                .request__email {}
+            }
+        }
+    }
+}
+
+//END REQUEST

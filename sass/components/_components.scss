@@ -1,0 +1,16 @@
+.a-rounded {
+    border-radius: 50px;
+}
+
+.headline {
+    font-family: "Montserrat",Arial,Helvetica,sans-serif;
+    .title {
+        color: $color-primary;
+        font-weight: $text-fw-6;
+        margin-bottom: 0.5em;
+    }
+    .content {
+        color: $color-secondary;
+        font-weight: $text-fw-7;
+    }
+}
