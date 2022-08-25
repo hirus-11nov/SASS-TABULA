@@ -151,6 +151,11 @@
 
 //START REQUEST
 .request {
+    background-image: url('/img/accent_bottom_wave_01.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
     .port {
         .cell {
             width: 1000px;
@@ -174,6 +179,8 @@
                     box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
                     border-radius: 10px;
                     padding: 25px;
+                    z-index: 100;
+                    background-color: $color-white;
 
                     .headline {
                         .content {
@@ -206,7 +213,7 @@
                             @include aButton();
                             display: inline-block;
                             padding: 0.9rem 3.5rem;
-                            font-family: "Montserrat",Arial,Helvetica,sans-serif;
+                            font-family: "Montserrat", Arial, Helvetica, sans-serif;
                             margin-top: 30px;
                             margin-bottom: 45px;
                         }
@@ -218,3 +225,115 @@
 }
 
 //END REQUEST
+//START FOOTER
+.footer {
+    position: relative;
+    padding-bottom: 148px!important;
+    &::after {
+        content: '';
+        @include backgroundStyle(url(/img/footer_background.jpg), center, no-repeat, cover, 100%, 100%);
+        position: absolute;
+        bottom: 0;
+    }
+    .container {
+        .headline {
+            margin-top: 24px;
+            margin-bottom: 20px;
+
+            .content {
+                font-size: 1.5rem;
+                color: $text-color-white;
+            }
+        }
+
+        .footer__contact {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                color: $text-color-white;
+                display: flex;
+                align-items: center;
+                line-height: 35px;
+                font-size: $text-fs-1;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+
+            span:first-child {
+                i {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .social-media {
+            margin-top: 20px;
+
+            a {
+                margin-left: 9px;
+                @include aTag ($text-fs-2, $text-fw-5, $text-color-white, capitalize, $text-color-primary);
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .footer__links {
+            display: flex;
+
+            li {
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+                a {
+                    @include aTag ($text-fs-1, $text-fw-4, $text-color-white, capitalize, $text-color-white);
+                    font-family: "Roboto", Arial, Helvetica, sans-serif;
+                    line-height: 40px;
+
+                    &:hover {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+
+        .footer__subscribe {
+            input {
+                padding: 13px;
+                margin-top: 15px;
+                background: transparent;
+                border-radius: 50px;
+                color: $text-color-white;
+                text-align: center;
+                font-size: $text-fs-2;
+                font-weight: $text-fw-4;
+                border: 1px solid rgba(235, 21, 150, 0.2);
+
+                &::placeholder {
+                    color: $text-color-white;
+                }
+
+                &:focus {
+                    box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+                    border: 1px solid rgba(255, 255, 255, 1);
+                }
+            }
+
+            a {
+                @include aTag($text-fs-2, $text-fw-6, $text-color-primary, uppercase, $text-color-white, $transition-primary);
+                @include aButton(0 0 0 3rem $bg-secondary inset, 0 0 0 1px $bg-secondary inset);
+                display: inline-block;
+                width: 100%;
+                padding: 13px;
+                text-align: center;
+                margin-top: 5px;
+                font-family: "Montserrat", Arial, Helvetica, sans-serif;
+            }
+        }
+    }
+}
+
+//END FOOTER
