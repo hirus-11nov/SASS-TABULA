@@ -5,9 +5,62 @@
     width: 100%;
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     z-index: 999;
+    .header__vertical {
+        position: fixed;
+        width: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: $bg-secondary;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            .header__toggle {
+                margin-top: 24px;
+                margin-right: 10px;
+
+                span {
+                    font-weight: 300;
+                    font-size: 36px;
+                }
+
+                span:nth-child(1) {
+                    line-height: 0;
+                }
+
+                span:nth-child(2) {
+                    line-height: 0.5;
+                }
+
+                span:nth-child(3) {
+                    line-height: 0;
+                }
+            }
+
+            .header__logo {
+                img {
+                    width: 55%;
+                }
+            }
+        }
+
+        @include responsive ("lg") {
+            display: none;
+        }
+    }
 
     .container {
         .header__main {
+            display: none;
+
             .header__logo {
                 img {
                     width: 80px;
@@ -15,36 +68,116 @@
             }
 
             .header__navbar {
+                display: flex;
+
                 li {
                     padding-right: 50px;
-
+                    &:hover {
+                        .nav-link::after {
+                            transform: scale(1.5);
+                        }
+                    }
                     .nav-link {
+                        position: relative;
                         line-height: 80px;
                         @include aTag($text-fs-1, $text-fw-6, $text-color-primary, capitalize, $text-color-secondary);
+
+                        &:after {
+                            content: ' ';
+                            display: block;
+                            position: absolute;
+                            z-index: 5;
+                            bottom: -4px;
+                            margin-left: -4px;
+                            left: 50%;
+                            pointer-events: none;
+                            height: 8px;
+                            width: 8px;
+                            border-radius: 50%;
+                            background-color: $bg-primary;
+                            transition: 300ms ease all;
+                            transform: scale(0);
+                        }
+                    }
+                }
+
+                li:nth-child(2) {
+                    .nav-link {
+                        &::after {
+                            content: ' ';
+                            display: block;
+                            position: absolute;
+                            z-index: 5;
+                            bottom: -4px;
+                            margin-left: -4px;
+                            left: 50%;
+                            pointer-events: none;
+                            height: 8px;
+                            width: 8px;
+                            border-radius: 50%;
+                            background-color: $bg-primary;
+                            transition: 300ms ease all;
+                            transform: scale(1.5);
+                        }
                     }
                 }
 
                 li:last-child {
                     padding: 0;
                 }
+
+
+                .header__contact {
+                    margin-left: 50px;
+
+                    .phone-number {
+                        padding: .7rem 1.5rem;
+                        margin: 8px;
+                        position: relative;
+                        overflow: hidden;
+                        @include aTag ($text-fs-1, $text-fw-5, $text-color-white, capitalize, $text-color-secondary);
+                        @include aButton ();
+                    }
+
+                    .social-media {
+                        a {
+                            margin-left: 9px;
+                            @include aTag ($text-fs-1, $text-fw-5, $text-color-primary, capitalize, $text-color-secondary);
+                        }
+                    }
+                }
             }
 
-            .header__contact {
-                margin-left: 50px;
+            @include responsive("lg") {
+                display: flex;
+            }
+        }
+    }
+}
 
-                .phone-number {
-                    padding: .7rem 1.5rem;
-                    margin: 8px;
-                    position: relative;
-                    overflow: hidden;
-                    @include aTag ($text-fs-1, $text-fw-5, $text-color-white, capitalize, $text-color-secondary);
-                    @include aButton ();
+.header.scrolled-on {
+    background-color: $bg-secondary;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px 0 rgb(204 204 204 / 50%);
+    .container {
+        .header__main {
+            justify-content: flex-end !important;
+
+            .header__logo {
+                display: none;
+            }
+
+            .header__navbar {
+                align-items: center;
+
+                .nav-link {
+                    line-height: 40px;
                 }
 
-                .social-media {
+                .header__contact {
                     a {
-                        margin-left: 9px;
-                        @include aTag ($text-fs-1, $text-fw-5, $text-color-primary, capitalize, $text-color-secondary);
+                        padding-top: 7px;
+                        padding-bottom: 7px;
                     }
                 }
             }
@@ -78,6 +211,20 @@
         .about-us__left {
             .headline {
                 @include titleAndContent();
+                .content {
+                    font-size: 37px;
+                    margin-bottom: 45px;
+                }
+                @include responsive ("xxs") {
+                    .content {
+                        font-size: 47px;
+                    }
+                }
+                @include responsive ("lg") {
+                    .content {
+                        font-size: $text-fs-6xl;
+                    }
+                }
             }
         }
 
@@ -184,8 +331,11 @@
 
                     .headline {
                         .content {
-                            font-size: 38px;
+                            font-size: 30px;
                             margin-bottom: 50px;
+                            @include responsive ('lg') {
+                                font-size: 38px
+                            }
                         }
                     }
 
@@ -228,13 +378,15 @@
 //START FOOTER
 .footer {
     position: relative;
-    padding-bottom: 148px!important;
+    padding-bottom: 148px !important;
+
     &::after {
         content: '';
         @include backgroundStyle(url(/img/footer_background.jpg), center, no-repeat, cover, 100%, 100%);
         position: absolute;
         bottom: 0;
     }
+
     .container {
         .headline {
             margin-top: 24px;
