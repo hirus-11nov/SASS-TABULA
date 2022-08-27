@@ -1,7 +1,7 @@
 $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
     if (scroll >= 80) {
-        $(".header").addClass("initial scrolled-on");
+        $(".header").addClass("scrolled-on");
     } else {
         $(".header").removeClass("scrolled-on");
     }
